@@ -75,8 +75,7 @@ namespace Task2
                             tasks.task_5();
                             break;
                         case "6":
-                            Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("Program is developing");
+                            tasks.task_6();
                             break;
                        default:
                            Console.ForegroundColor = ConsoleColor.Red;
@@ -86,7 +85,7 @@ namespace Task2
 
                     }
                     // Смотри сюда.
-                    Console.WriteLine("Мы попали сюда");
+                    
                     // Разобраться с командами git push commit merge 
                     // Прочитать разделы сайта
                     // Доделать эту программу
