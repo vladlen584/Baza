@@ -243,62 +243,68 @@ namespace Task2
         }
         public void task_6()
         {
-            //  Напишите программу в которой выводится последовательность чисел Фибоначчи
-            Console.WriteLine("До какого числа считать ряд Фибоначчи?");
-            int number = Convert.ToInt32(Console.ReadLine());
+            // Напишите программу в которой выводится последовательность чисел Фибоначчи.
+          
             int a = 1;
-            Console.Write("{0} ", a);
+            Console.WriteLine(a);
             int b = 1;
-            Console.Write("{0} ", b);
-            int summa = 0;
-            while (number >= summa)
+            Console.WriteLine(b);
+            int NextNumber = 0;
+            for(int i = 0; i <= 15; i++)
             {
-                summa = a + b;
-                Console.WriteLine("{0}", summa);
+
+                NextNumber = a + b;
+                Console.WriteLine(NextNumber);
                 a = b;
-                b = summa;
-            } 
+                b = NextNumber;
+            }
+            Console.ReadLine();
+        }
 
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        public void task_7()
+        {
 
         }
 
 
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

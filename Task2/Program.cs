@@ -53,6 +53,8 @@ namespace Task2
                     Console.WriteLine("Описание программы номер 6. Программа определяет числа " +
                                       "Фибоначчи");
                     Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("\nНабирите 7 если хотите выполнить задачу task_7() ");
+
 
 
 
@@ -80,16 +82,24 @@ namespace Task2
                        default:
                            Console.ForegroundColor = ConsoleColor.Red;
                            Console.WriteLine("Программа не обработала введеное значение");
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                            Console.WriteLine("Нажмите ENTER для продолжения");
                             break;
 
 
                     }
-                    // Смотри сюда.
-                    
-                    // Разобраться с командами git push commit merge 
-                    // Прочитать разделы сайта
-                    // Доделать эту программу
-                    // Добавить в нее 3 таски.
+                    Console.WriteLine("Введите номер программы которую хотите продолжить или начать");
+                    string Value = Console.ReadLine();
+                    if (Value == "1" || Value == "2" || Value == "3" || Value == "4" || Value == "5" || Value == "6")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Система перезагрузилась");
+                        Console.WriteLine("Хотите продолжить");
+                        Console.WriteLine("Для продолжение нажмите Да или Нет");
+                    }
+
+
+
 
 
 
