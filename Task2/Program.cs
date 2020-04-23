@@ -11,7 +11,7 @@ namespace Task2
 
                 try
                 {
-                    Tasks tasks = new Tasks();
+                   
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Введите пароль для входа в систему");
                     string password = Console.ReadLine();
@@ -56,46 +56,27 @@ namespace Task2
                     Console.WriteLine("\nНабирите 7 если хотите выполнить задачу task_7() ");
 
 
+                    SelectTask();
 
+                    
 
-                    string choice = Console.ReadLine();
-                    switch (choice)
-                    {
-                        case "1":
-                            tasks.TASK_1();
-                            break;
-                        case "2":
-                            tasks.task_2();
-                            break;
-                        case "3":
-                            tasks.task_3();
-                            break;
-                        case "4":
-                            tasks.task_4();
-                            break;
-                        case "5":
-                            tasks.task_5();
-                            break;
-                        case "6":
-                            tasks.task_6();
-                            break;
-                       default:
-                           Console.ForegroundColor = ConsoleColor.Red;
-                           Console.WriteLine("Программа не обработала введеное значение");
-                            Console.ForegroundColor = ConsoleColor.Blue;
-                            Console.WriteLine("Нажмите ENTER для продолжения");
-                            break;
-
-
-                    }
                     Console.WriteLine("Введите номер программы которую хотите продолжить или начать");
-                    string Value = Console.ReadLine();
-                    if (Value == "1" || Value == "2" || Value == "3" || Value == "4" || Value == "5" || Value == "6")
+                    string Value = Console.ReadLine();// должно быть uint
+                    if (Value >= "1" && Value<"7")// 1<=Value<7
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("Система перезагрузилась");
                         Console.WriteLine("Хотите продолжить");
                         Console.WriteLine("Для продолжение нажмите Да или Нет");
+                        string continuation = Console.ReadLine();
+                        if (continuation == "Да")
+                        {
+                            SelectTask();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Как хотите!");
+                        }
                     }
 
 
@@ -148,6 +129,41 @@ namespace Task2
 
 
             }
+        static void SelectTask()
+        {
+            Tasks tasks = new Tasks();
+
+            string choice = Console.ReadLine();
+            switch (choice)
+            {
+                case "1":
+                    tasks.TASK_1();
+                    break;
+                case "2":
+                    tasks.task_2();
+                    break;
+                case "3":
+                    tasks.task_3();
+                    break;
+                case "4":
+                    tasks.task_4();
+                    break;
+                case "5":
+                    tasks.task_5();
+                    break;
+                case "6":
+                    tasks.task_6();
+                    break;
+                default:
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Программа не обработала введеное значение");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("Нажмите ENTER для продолжения");
+                    break;
+
+
+            }
+        }
 
 
 

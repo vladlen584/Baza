@@ -244,13 +244,14 @@ namespace Task2
         public void task_6()
         {
             // Напишите программу в которой выводится последовательность чисел Фибоначчи.
+            Console.WriteLine("Вывод чисел Фибоначчи");
           
             int a = 1;
             Console.WriteLine(a);
             int b = 1;
             Console.WriteLine(b);
             int NextNumber = 0;
-            for(int i = 0; i <= 15; i++)
+            for(int i = 0; i <= 4; i++)
             {
 
                 NextNumber = a + b;
