@@ -21,63 +21,39 @@ namespace Task2
                         Console.WriteLine("Пароль не верный вам отказано в доступе!");
                         break;
                     }
-
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Наберите 1 если хотите выполнить задачу TASK_1() ");
-                    Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.WriteLine("Описание программы номер 1 программа проверяет делится ли введенное" +
-                                      "пользователем число на 3 и на 7");
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("\nНаберите 2 если хотите выполнить задачу task_2() ");
-                    Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.WriteLine("Описание программы номер 2 программа определяет какое " +
-                                      "из чисел больше или они равны!");
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("\nНаберите 3 если хотите выполнить задачу task_3() ");
-                    Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.WriteLine("Описание программы номер 3. Программа отображает" +
-                                      "сумму введенных пользователем чисел");
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("\nНаберите 4 если хотите выполнить задачу task_4() ");
-                    Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.WriteLine("Описание программы номер 4. Программа определяет " +
-                                      "по введенному пользователем числу день недели. ");
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("\nНаберите 5 если хотите выполнить задачу task_5() ");
-                    Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.WriteLine("Описание программы номер 5. Программа вычисляет сумму" +
-                                      " нечетных чисел");
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("\nНабирите 6 если хотите выполнить задачу task_6() ");
-                    Console.ForegroundColor = ConsoleColor.Gray;
-                    Console.WriteLine("Описание программы номер 6. Программа определяет числа " +
-                                      "Фибоначчи");
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("\nНабирите 7 если хотите выполнить задачу task_7() ");
-
-
-                    SelectTask();
-
+                    Command();
+                   
                     
 
-                    Console.WriteLine("Введите номер программы которую хотите продолжить или начать");
-                    string Value = Console.ReadLine();// должно быть uint
-                    if (Value >= "1" && Value<"7")// 1<=Value<7
+
+
+                    while (true)
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("Система перезагрузилась");
-                        Console.WriteLine("Хотите продолжить");
-                        Console.WriteLine("Для продолжение нажмите Да или Нет");
-                        string continuation = Console.ReadLine();
-                        if (continuation == "Да")
+                        Console.WriteLine("\nВведите номер программы которую хотите продолжить или начать");
+                        uint Value = Convert.ToUInt32(Console.ReadLine());
+
+                        if (Value >= 1 && Value <= 8)// 1<=Value<7
                         {
-                            SelectTask();
+
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            SelectTask(Value);
+                            
                         }
-                        else
+                        if (Value == 0)
                         {
-                            Console.WriteLine("Как хотите!");
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Вы вышли из программы");
+                            Console.WriteLine("Система перезапускается....");
+                            break;
                         }
+                        
                     }
+                    
+                    
+                   
+
+                   
 
 
 
@@ -120,7 +96,7 @@ namespace Task2
 
                 }
 
-                Console.ReadLine();
+               
 
             }
             while (true);
@@ -129,30 +105,37 @@ namespace Task2
 
 
             }
-        static void SelectTask()
+        static void SelectTask(uint Value)
         {
             Tasks tasks = new Tasks();
 
-            string choice = Console.ReadLine();
-            switch (choice)
+           
+            switch (Value)
             {
-                case "1":
+                case 1:
                     tasks.TASK_1();
                     break;
-                case "2":
+                case 2:
                     tasks.task_2();
                     break;
-                case "3":
+                case 3:
                     tasks.task_3();
                     break;
-                case "4":
+                case 4:
                     tasks.task_4();
                     break;
-                case "5":
+                case 5:
                     tasks.task_5();
                     break;
-                case "6":
+                case 6:
                     tasks.task_6();
+                    break;
+                case 7:
+                    tasks.task_7();
+                    break;
+                case 8:
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Программа находится на стадии разработки...");
                     break;
                 default:
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -163,6 +146,56 @@ namespace Task2
 
 
             }
+        }
+
+        static void Command()
+        {
+            Exit();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Наберите 1 если хотите выполнить задачу TASK_1() ");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("Описание программы номер 1 программа проверяет делится ли введенное" +
+                              "пользователем число на 3 и на 7");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\nНаберите 2 если хотите выполнить задачу task_2() ");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("Описание программы номер 2 программа определяет какое " +
+                              "из чисел больше или они равны!");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\nНаберите 3 если хотите выполнить задачу task_3() ");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("Описание программы номер 3. Программа отображает" +
+                              "сумму введенных пользователем чисел");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\nНаберите 4 если хотите выполнить задачу task_4() ");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("Описание программы номер 4. Программа определяет " +
+                              "по введенному пользователем числу день недели. ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\nНаберите 5 если хотите выполнить задачу task_5() ");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("Описание программы номер 5. Программа вычисляет сумму" +
+                              " нечетных чисел");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\nНабирите 6 если хотите выполнить задачу task_6() ");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("Описание программы номер 6. Программа определяет числа " +
+                              "Фибоначчи");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\nНабирите 7 если хотите выполнить задачу task_7() ");
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("Описание программы номер 7.Программа выводит все целые числа от наименьшего" +
+                " к наибольшему (из двух введенных)");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\nНабирите 8 если хотите выполнить задачу task_8() ");
+
+
+        }
+
+        static void Exit()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Для выхода из программы введите ноль");
         }
 
 

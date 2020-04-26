@@ -96,7 +96,8 @@ namespace Task2
                     Console.WriteLine("Число не делится");
                     
                 }
-                Console.ReadLine();
+                
+           
           
             
            
@@ -179,7 +180,7 @@ namespace Task2
                     Console.WriteLine("Выход из системы");
                 }
             }
-            Console.ReadLine();
+           
 
 
 
@@ -205,67 +206,71 @@ namespace Task2
 
             }
             while (true);
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Программа закончила свою работу");
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Хотите продолжить?");
 
-            Console.WriteLine("Для повтора наберите Да, для выхода Нет");
-            string rep = Console.ReadLine();
-            if (rep == "Да")
-            {
-                task_5();
-                
-
-            }
-            else
-            {
-                if (rep == "Нет")
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Ну как хотите!");
-                    Console.WriteLine("Система перезапускается....");
-                    
-                }
-                else
-                {
-                    if (rep == "")
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Введенно некоректное значение");
-                    }
-                }
-                
-            }
-
-            Console.ReadLine();
+           
 
         }
         public void task_6()
         {
             // Напишите программу в которой выводится последовательность чисел Фибоначчи.
             Console.WriteLine("Вывод чисел Фибоначчи");
-          
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("Введите число для продолжения...");
+            Console.ForegroundColor = ConsoleColor.Green;
+            int Number = Convert.ToInt32(Console.ReadLine());
+
             int a = 1;
             Console.WriteLine(a);
             int b = 1;
             Console.WriteLine(b);
-            int NextNumber = 0;
-            for(int i = 0; i <= 4; i++)
+
+            for (int i = 0; i <= Number; i++)
             {
 
-                NextNumber = a + b;
+                int NextNumber = a + b;
                 Console.WriteLine(NextNumber);
                 a = b;
                 b = NextNumber;
             }
-            Console.ReadLine();
+           
+            
         }
 
         public void task_7()
         {
+            //Напишите программу в которой пользователем вводится два целых числа,
+            //Программа выводит все целые числа-начиная с наименьшего (из двух введеных)
+            // и заканчивая наибольшим(из двух введенных)
+
+            Console.WriteLine("Введите первое число");
+            int Number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите второе число");
+            int Number2 = Convert.ToInt32(Console.ReadLine());
+            if (Number < Number2)
+            {
+                for (int i = Number; i <= Number2; i++)
+                {
+                    Console.WriteLine(i);
+                }
+            }
+            else
+            {
+                for(int a = Number2; a <= Number; a++)
+                {
+                    Console.WriteLine(a);
+                }
+            }
+           
+            Console.ReadLine();
+        }
+
+        public void task_8()
+        {
 
         }
+
+
+
 
 
 
